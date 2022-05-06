@@ -1,0 +1,25 @@
+.tab{
+    width: 172px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(0deg, #F0F0F0, #F0F0F0), #F0F0F0;
+    mix-blend-mode: darken;
+    box-shadow: inset 0px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    &_active{
+        background: #DEDCDC;
+        mix-blend-mode: darken;
+        box-shadow: inset 0px 5px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 10px;
+    }
+
+    &__container{
+        display: flex;
+        position: absolute;
+        top: 230px;
+    }
+}

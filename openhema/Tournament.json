@@ -1,0 +1,228 @@
+{
+    "fighters": [
+        {
+            "id": 1,
+            "name": "Орехов Данила",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 2,
+            "name": "Максименко Денис",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 3,
+            "name": "Игорь Радионов",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 4,
+            "name": "Азамат Раджабов",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 5,
+            "name": "Даниил Кудрявцев",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 6,
+            "name": "Константин Ануфриев",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 7,
+            "name": "Илья Старцев",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 8,
+            "name": "Николай Купцов",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 9,
+            "name": "Судаков Александр",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 10,
+            "name": "Прудников Олег",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 11,
+            "name": "Буробин Георгий",
+            "club": "Золотые Леса"
+        },
+        {
+            "id": 12,
+            "name": "Колбасов Василий",
+            "club": "Золотые Леса"
+        }
+    ],
+    "pools": [
+        {
+            "poolId": 1,
+            "status": "ended",
+            "fights": [
+                {
+                    "fightId": 1,
+                    "status": "winner1",
+                    "fighter1Id": 1,
+                    "fighter2Id": 2,
+                    "score1": 5,
+                    "score2": 4
+                },
+                {
+                    "fightId": 2,
+                    "status": "winner1",
+                    "fighter1Id": 3,
+                    "fighter2Id": 4,
+                    "score1": 5,
+                    "score2": 3
+                },
+                {
+                    "fightId": 3,
+                    "status": "winner2",
+                    "fighter1Id": 3,
+                    "fighter2Id": 2,
+                    "score1": 3,
+                    "score2": 5
+                },
+                {
+                    "fightId": 4,
+                    "status": "winner2",
+                    "fighter1Id": 4,
+                    "fighter2Id": 2,
+                    "score1": 0,
+                    "score2": 5
+                },
+                {
+                    "fightId": 5,
+                    "status": "winner1",
+                    "fighter1Id": 1,
+                    "fighter2Id": 4,
+                    "score1": 5,
+                    "score2": 4
+                },
+                {
+                    "fightId": 6,
+                    "status": "winner1",
+                    "fighter1Id": 1,
+                    "fighter2Id": 3,
+                    "score1": 3,
+                    "score2": 2
+                }
+            ]
+        },
+        {
+            "poolId": 2,
+            "status": "ended",
+            "fights": [
+                {
+                    "fightId": 7,
+                    "status": "winner2",
+                    "fighter1Id": 5,
+                    "fighter2Id": 6,
+                    "score1": 5,
+                    "score2": 6
+                },
+                {
+                    "fightId": 8,
+                    "status": "winner1",
+                    "fighter1Id": 7,
+                    "fighter2Id": 8,
+                    "score1": 5,
+                    "score2": 3
+                },
+                {
+                    "fightId": 9,
+                    "status": "winner1",
+                    "fighter1Id": 7,
+                    "fighter2Id": 6,
+                    "score1": 5,
+                    "score2": 0
+                },
+                {
+                    "fightId": 10,
+                    "status": "winner2",
+                    "fighter1Id": 8,
+                    "fighter2Id": 6,
+                    "score1": 4,
+                    "score2": 5
+                },
+                {
+                    "fightId": 11,
+                    "status": "winner1",
+                    "fighter1Id": 5,
+                    "fighter2Id": 8,
+                    "score1": 5,
+                    "score2": 1
+                },
+                {
+                    "fightId": 12,
+                    "status": "winner2",
+                    "fighter1Id": 5,
+                    "fighter2Id": 7,
+                    "score1": 2,
+                    "score2": 5
+                }
+            ]
+        },
+        {
+            "poolId": 3,
+            "status": "running",
+            "fights": [
+                {
+                    "fightId": 13,
+                    "status": "winner1",
+                    "fighter1Id": 9,
+                    "fighter2Id": 10,
+                    "score1": 5,
+                    "score2": 3
+                },
+                {
+                    "fightId": 14,
+                    "status": "winner2",
+                    "fighter1Id": 11,
+                    "fighter2Id": 12,
+                    "score1": 2,
+                    "score2": 5
+                },
+                {
+                    "fightId": 15,
+                    "status": "winner2",
+                    "fighter1Id": 11,
+                    "fighter2Id": 10,
+                    "score1": 1,
+                    "score2": 5
+                },
+                {
+                    "fightId": 16,
+                    "status": "draw",
+                    "fighter1Id": 12,
+                    "fighter2Id": 10,
+                    "score1": 0,
+                    "score2": 0
+                },
+                {
+                    "fightId": 17,
+                    "status": "running",
+                    "fighter1Id": 9,
+                    "fighter2Id": 12,
+                    "score1": 3,
+                    "score2": 3
+                },
+                {
+                    "fightId": 18,
+                    "status": "waiting",
+                    "fighter1Id": 9,
+                    "fighter2Id": 11,
+                    "score1": "",
+                    "score2": ""
+                }
+            ]
+        }
+    ]
+}
