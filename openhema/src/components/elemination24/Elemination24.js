@@ -1,0 +1,89 @@
+import EleminationFight from "../eleminationFight/EleminationFight";
+
+import { useTransformData } from "../../hooks/transformData.hook";
+
+const Elemination24 = ({eleminations, fighters}) => {
+
+    const { transformFights } = useTransformData();
+
+    const renderEleminationsRounds = (arr) => {
+        return arr.map(({fightId, ...props}) => {
+            return (
+                <EleminationFight key={fightId} {...props} />
+            )
+        })
+    };
+
+    const round1AArray = transformFights(eleminations.rounds[0].fights.slice(0,3), fighters);
+    const round1BArray = transformFights(eleminations.rounds[0].fights.slice(3,6), fighters);
+
+    const round1A = renderEleminationsRounds(round1AArray);
+    const round1B = renderEleminationsRounds(round1BArray);
+
+    const round2AArray = transformFights(eleminations.rounds[1].fights.slice(0,6), fighters);
+    const round2BArray = transformFights(eleminations.rounds[1].fights.slice(5,12), fighters);
+
+    const round2A = renderEleminationsRounds(round2AArray);
+    const round2B = renderEleminationsRounds(round2BArray);
+
+    const finales = transformFights(eleminations.finales, fighters);
+
+    return(
+        <section id="bracket">
+            <div className="container">
+
+                <div className="split split-one"> 
+
+                    <div className="round round-two current">
+                        <div className="round-details">1/6 финала<br/><span className="date"></span></div>			
+                        {round2A}									
+                    </div>	
+
+                    <div className="round round-three current">
+                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>			
+                        {round1A}									
+                    </div>		
+                </div> 
+            
+                <div className="champion">
+
+                        <div className="final current">
+                            <i className="fa fa-trophy"></i>
+                            <div className="round-details">Финал трёх<br/><span className="date"></span></div>		
+                                <EleminationFight {...finales[0]}/>
+                        </div>
+
+
+                        <div className="final current">		
+                            <div className="round-details"><br/><span className="date"></span></div>		
+                                <EleminationFight {...finales[1]}/>
+                        </div>
+
+                        <div className="final current">		
+                            <div className="round-details"><br/><span className="date"></span></div>		
+                                <EleminationFight {...finales[2]}/>
+                        </div>
+	
+
+                </div>
+            
+            
+                <div className="split split-two">
+
+                    <div className="round round-three current">
+                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>	
+                        {round1B}									
+                    </div>
+
+                    <div className="round round-two current">
+                        <div className="round-details">1/6 финала<br/><span className="date"></span></div>			
+                        {round2B}									
+                    </div>	
+                </div>
+
+            </div>
+        </section>
+    )
+}
+
+export default Elemination24;

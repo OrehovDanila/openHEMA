@@ -39,7 +39,7 @@
 
     
     &__body{
-        border: solid black 1px;
+        border: solid gray 1px;
         border-collapse: collapse;
         border-radius: 10px;
         background-color: #D7D7D7;
@@ -48,8 +48,8 @@
     &__fight{
         display: flex;
         border-collapse: collapse;
-        border: solid black 1px;
-        
+        border: solid gray 1px;
+        border-radius: 10px 10px 10px 10px;
     }
     &__fighter{
         display: flex;
@@ -67,8 +67,8 @@
 }
 
 .scores{
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
     border-collapse: collapse;
     flex: 0 0 50px;
     font-weight: 600;
@@ -82,4 +82,8 @@
 
 .winner{
     background-color: #FFDB81;
+}
+
+.activePool{
+    border-color: black;
 }
