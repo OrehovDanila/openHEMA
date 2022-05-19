@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { Modal, Button, Form, ButtonGroup } from 'react-bootstrap';
 import { useDispatch, useSelector} from 'react-redux';
 import { useState } from 'react';
+import { getDatabase, ref, get } from 'firebase/database';
 
 
 import { modalToogle } from '../../actions';
 import { authToogle, authError } from '../../actions';
-import { useHttp } from '../../hooks/http.hook'
 
 import tournamentLogo from "../../resources/icon.jpg";
 import './appHeader.scss';
@@ -22,14 +22,17 @@ const AppHeader = () => {
     const showModal = useSelector(state => state.modal.showModal);
     const auth = useSelector(state => state.auth.auth);
     const dispatch = useDispatch();
-    const { request } = useHttp();
+
+    const database = getDatabase();
 
 
 
     const handleSubmit  = (e) => {
         e.preventDefault();
-        request("http://localhost:3001/users")
-            .then((data) => {
+
+        get(ref(database, 'users')).then((snapshot) => {
+            if(snapshot.exists()){
+                const data = snapshot.val()
                 data.forEach((item) => {
                     console.log(`${item.login} === ${username}`)
                     console.log(`${item.password} === ${password}`)
@@ -38,10 +41,9 @@ const AppHeader = () => {
                         dispatch(modalToogle());
                     } else alert('Ошибка доступа!');
                 })
-            })
-            .catch(() => {
-                dispatch(authError());
-            })
+            } else dispatch(authError())
+
+        })
     }
 
     const renderButtons = (auth) => {
