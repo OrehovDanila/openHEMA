@@ -1,7 +1,8 @@
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Modal, Button, Form, ButtonGroup } from 'react-bootstrap';
 import { useDispatch, useSelector} from 'react-redux';
 import { useState } from 'react';
+
 
 import { modalToogle } from '../../actions';
 import { authToogle, authError } from '../../actions';
@@ -47,9 +48,9 @@ const AppHeader = () => {
         if(auth) {
             return (
                 <ButtonGroup className="app__buttonGroup">
-                    <Button type="button" className="btn btn-warning">Таблицы</Button>
-                    <Button type="button" className="btn btn-warning">Табло</Button>
-                    <Button type="button" className="btn btn-warning">Управление таблом</Button>
+                    <NavLink end type="button" className="btn btn-warning" to="/">Таблицы</NavLink>
+                    <NavLink type="button" className="btn btn-warning" to="/scoreboard">Табло</NavLink>
+                    <NavLink type="button" className="btn btn-warning" to="/scoreboard-control/pools">Управление таблом</NavLink>
                     <Button type="button" className="btn btn-warning">Админка</Button>
                     <Button type="button" className="btn btn-warning" onClick={() => dispatch(authToogle())}>Выход</Button>
                 </ButtonGroup>

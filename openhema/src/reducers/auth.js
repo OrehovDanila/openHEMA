@@ -4,7 +4,7 @@ import { authToogle, authError } from "../actions";
 
 const initialState = {
     authStatus: "idle",
-    auth: false
+    auth: true
 }
 
 const auth = createReducer(initialState, {

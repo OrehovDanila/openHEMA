@@ -162,8 +162,8 @@
         }
     ],
     "pools": [
-        {
-            "poolId": 1,
+        {   
+            "poolId": 0,
             "poolName": "Группа 1",
             "nomination": "База классика",
             "status": "ended",
@@ -219,7 +219,7 @@
             ]
         },
         {
-            "poolId": 2,
+            "poolId": 1,
             "poolName": "Группа 2",
             "nomination": "База классика",
             "status": "ended",
@@ -275,7 +275,7 @@
             ]
         },
         {
-            "poolId": 3,
+            "poolId": 2,
             "poolName": "Группа 3",
             "nomination": "База классика",
             "status": "running",
@@ -333,91 +333,467 @@
     ],
     "eleminations": [
         {
+            "eleminationType": "24",
+            "nomination": "База классика",
+            "rounds": [
+                {
+                    "RoundId": 0,
+                    "RoundName": "Финал трёх",
+                    "fights": [
+                        {
+                            "fightId": 88,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 12,
+                            "score2": 13
+                        },
+                        {
+                            "fightId": 89,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 12,
+                            "score2": 13
+                        },
+                        {
+                            "fightId": 90,
+                            "status": "winner1",
+                            "fighter1Id": 23,
+                            "fighter2Id": 25,
+                            "score1": 12,
+                            "score2": 13
+                        }
+                    ]
+                },
+                {   
+                    "RoundId": 1,
+                    "RoundName": "1/3 финала",
+                    "fights": [
+                        {
+                            "fightId": 19,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 11,
+                            "score2": 12
+                        },
+                        {
+                            "fightId": 20,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 13,
+                            "score2": 14
+                        },
+                        {
+                            "fightId": 21,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 15,
+                            "score2": 16
+                        },
+                        {
+                            "fightId": 22,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 23,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 24,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        }
+                    ]
+                },
+                {
+                    "RoundId": 2,
+                    "RoundName": "1/6 финала",
+                    "fights": [
+                        {
+                            "fightId": 25,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 11,
+                            "score2": 12
+                        },
+                        {
+                            "fightId": 26,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 13,
+                            "score2": 14
+                        },
+                        {
+                            "fightId": 27,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 15,
+                            "score2": 16
+                        },
+                        {
+                            "fightId": 28,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": "17",
+                            "score2": "18"
+                        },
+                        {
+                            "fightId": 29,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 11,
+                            "score2": 12
+                        },
+                        {
+                            "fightId": 30,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 13,
+                            "score2": 14
+                        },
+                        {
+                            "fightId": 31,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 15,
+                            "score2": 16
+                        },
+                        {
+                            "fightId": 32,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 33,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 34,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 35,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        }
+                    ]
+                },
+                {
+                    "RoundId": 3,
+                    "RoundName": "1/12 финала",
+                    "fights": [
+                        {
+                            "fightId": 36,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 37,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 38,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 39,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 40,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 41,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 42,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 43,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 44,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 45,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 46,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 47,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 48,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 7,
+                            "score1": "11",
+                            "score2": "12"
+                        },
+                        {
+                            "fightId": 49,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 6,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 50,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 5,
+                            "score1": 17,
+                            "score2": 18
+                        },
+                        {
+                            "fightId": 51,
+                            "status": "winner2",
+                            "fighter1Id": 2,
+                            "fighter2Id": 4,
+                            "score1": 17,
+                            "score2": 18
+                        }
+                    ]
+                }
+            ],
+            "finales": [
+                {
+                    "fightId": 52,
+                    "status": "winner2",
+                    "fighter1Id": 2,
+                    "fighter2Id": 6,
+                    "score1": 17,
+                    "score2": 18
+                },
+                {
+                    "fightId": 53,
+                    "status": "winner2",
+                    "fighter1Id": 2,
+                    "fighter2Id": 6,
+                    "score1": 17,
+                    "score2": 18
+                },
+                {
+                    "fightId": 54,
+                    "status": "winner1",
+                    "fighter1Id": 23,
+                    "fighter2Id": 25,
+                    "score1": 17,
+                    "score2": 18
+                }
+            ]
+        },
+        {
         "eleminationType": "24",
         "nomination": "Женская сабля",
         "rounds": [
             {
+                "RoundId": 0,
+                "RoundName": "Финал трёх",
+                "fights": [
+                    {
+                        "fightId": 88,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 6,
+                        "score1": 12,
+                        "score2": 13
+                    },
+                    {
+                        "fightId": 89,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 6,
+                        "score1": 12,
+                        "score2": 13
+                    },
+                    {
+                        "fightId": 90,
+                        "status": "winner1",
+                        "fighter1Id": 23,
+                        "fighter2Id": 25,
+                        "score1": 12,
+                        "score2": 13
+                    }
+                ]
+            },
+            {   
                 "RoundId": 1,
+                "RoundName": "1/3 финала",
                 "fights": [
                     {
                         "fightId": 19,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
+                        "score1": 11,
+                        "score2": 12
                     },
                     {
                         "fightId": 20,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
+                        "score1": 13,
+                        "score2": 14
                     },
                     {
                         "fightId": 21,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
+                        "score1": 15,
+                        "score2": 16
                     },
                     {
                         "fightId": 22,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 23,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 24,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     }
                 ]
             },
             {
                 "RoundId": 2,
+                "RoundName": "1/6 финала",
                 "fights": [
                     {
-                        "fightId": 19,
+                        "fightId": 25,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
+                        "score1": 11,
+                        "score2": 12
                     },
                     {
-                        "fightId": 20,
+                        "fightId": 26,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
+                        "score1": 13,
+                        "score2": 14
                     },
                     {
-                        "fightId": 21,
+                        "fightId": 27,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
+                        "score1": 15,
+                        "score2": 16
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 28,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
@@ -425,68 +801,165 @@
                         "score2": "18"
                     },
                     {
-                        "fightId": 19,
+                        "fightId": 29,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
+                        "score1": 11,
+                        "score2": 12
                     },
                     {
-                        "fightId": 20,
+                        "fightId": 30,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
+                        "score1": 13,
+                        "score2": 14
                     },
                     {
-                        "fightId": 21,
+                        "fightId": 31,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
+                        "score1": 15,
+                        "score2": 16
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 32,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 33,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 34,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 35,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     }
                 ]
             },
             {
                 "RoundId": 3,
+                "RoundName": "1/12 финала",
                 "fights": [
                     {
-                        "fightId": 19,
+                        "fightId": 36,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 7,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 37,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 6,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 38,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 5,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 39,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 4,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 40,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 7,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 41,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 6,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 42,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 5,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 43,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 4,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 44,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 7,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 45,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 6,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 46,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 5,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 47,
+                        "status": "winner2",
+                        "fighter1Id": 2,
+                        "fighter2Id": 4,
+                        "score1": 17,
+                        "score2": 18
+                    },
+                    {
+                        "fightId": 48,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 7,
@@ -494,463 +967,56 @@
                         "score2": "12"
                     },
                     {
-                        "fightId": 20,
+                        "fightId": 49,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 21,
+                        "fightId": 50,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
+                        "score1": 17,
+                        "score2": 18
                     },
                     {
-                        "fightId": 22,
+                        "fightId": 51,
                         "status": "winner2",
                         "fighter1Id": 2,
                         "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
+                        "score1": 17,
+                        "score2": 18
                     }
                 ]
             }
         ],
         "finales": [
             {
-                "fightId": 23,
+                "fightId": 52,
                 "status": "winner2",
                 "fighter1Id": 2,
                 "fighter2Id": 6,
-                "score1": "12",
-                "score2": "13"
+                "score1": 17,
+                "score2": 18
             },
             {
-                "fightId": 24,
+                "fightId": 53,
                 "status": "winner2",
                 "fighter1Id": 2,
                 "fighter2Id": 6,
-                "score1": "12",
-                "score2": "13"
+                "score1": 17,
+                "score2": 18
             },
             {
-                "fightId": 25,
+                "fightId": 54,
                 "status": "winner1",
                 "fighter1Id": 23,
                 "fighter2Id": 25,
-                "score1": "12",
-                "score2": "13"
-            }
-        ]
-    },
-    {
-        "eleminationType": "24",
-        "nomination": "База классика",
-        "rounds": [
-            {
-                "RoundId": 1,
-                "fights": [
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    }
-                ]
-            },
-            {
-                "RoundId": 2,
-                "fights": [
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    }
-                ]
-            },
-            {
-                "RoundId": 3,
-                "fights": [
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    },
-                    {
-                        "fightId": 19,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 7,
-                        "score1": "11",
-                        "score2": "12"
-                    },
-                    {
-                        "fightId": 20,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 6,
-                        "score1": "13",
-                        "score2": "14"
-                    },
-                    {
-                        "fightId": 21,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 5,
-                        "score1": "15",
-                        "score2": "16"
-                    },
-                    {
-                        "fightId": 22,
-                        "status": "winner2",
-                        "fighter1Id": 2,
-                        "fighter2Id": 4,
-                        "score1": "17",
-                        "score2": "18"
-                    }
-                ]
-            }
-        ],
-        "finales": [
-            {
-                "fightId": 23,
-                "status": "winner2",
-                "fighter1Id": 2,
-                "fighter2Id": 6,
-                "score1": "12",
-                "score2": "13"
-            },
-            {
-                "fightId": 24,
-                "status": "winner2",
-                "fighter1Id": 2,
-                "fighter2Id": 6,
-                "score1": "12",
-                "score2": "13"
-            },
-            {
-                "fightId": 25,
-                "status": "winner1",
-                "fighter1Id": 23,
-                "fighter2Id": 25,
-                "score1": "12",
-                "score2": "13"
+                "score1": 17,
+                "score2": 18
             }
         ]
     }
@@ -969,6 +1035,44 @@
         {
             "login": "admin",
             "password": "admin"
+        }
+    ],
+    "scoreboards": [
+        {
+            "id": 0,
+            "fightId": 1,
+            "fightInfo": {},
+            "timer": 45000,
+            "timerWorks": false,
+            "lastGathering": false,
+            "scoreboardReverse": false
+        },
+        {
+            "id": 1,
+            "fightId": 3,
+            "fightInfo": {},
+            "timer": 45000,
+            "timerWorks": false,
+            "lastGathering": false,
+            "scoreboardReverse": false
+        },
+        {
+            "id": 2,
+            "fightId": 45,
+            "fightInfo": {},
+            "timer": 45000,
+            "timerWorks": false,
+            "lastGathering": false,
+            "scoreboardReverse": false 
+        },
+        {
+            "id": 3,
+            "fightId": 76,
+            "fightInfo": {},
+            "timer": 45000,
+            "timerWorks": false,
+            "lastGathering": false,
+            "scoreboardReverse": false 
         }
     ]
 }

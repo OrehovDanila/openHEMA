@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { useHttp } from '../../hooks/http.hook';
-import classNames from 'classname';
+import classNames from 'classnames';
+import { getDatabase, ref, onValue } from 'firebase/database'
 
-import { fetchNominations, nominationChanges } from '../../actions';
+import { nominationChanges, nominationsFetched } from '../../actions';
 
 import './tabs.scss'
 
@@ -15,12 +15,28 @@ const Tabs = () => {
 
 
     const dispatch = useDispatch();
-    const { request } = useHttp();
+
+    const database = getDatabase();
+
+    const nominationRef = ref(database, 'nominations');
 
     useEffect(() => {
-        dispatch(fetchNominations(request));
+
+        // подписываемся на обновления Readltime database когда компонент отрендерился 
+
+        const unsubNominations = onValue(nominationRef, (snapshot) => {
+            const data = snapshot.val();
+            dispatch(nominationsFetched(data));
+        })
+
+        return function cleanup() {
+            //Отписка по удалению компонента
+            console.log('отписка номинаций')
+            unsubNominations();
+        }
         // eslint-disable-next-line
-    },[]);
+    }, []);
+
 
     const onSelectTab = (e, id) => {
         e.preventDefault();

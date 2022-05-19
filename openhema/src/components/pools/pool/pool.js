@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import PoolFight from "../poolFight/PoolFight"
-import { useTransformData } from "../../hooks/transformData.hook";
+import { useTransformData } from "../../../hooks/transformData.hook";
 
 const Pool = ({poolName, status, fights}) => {
 

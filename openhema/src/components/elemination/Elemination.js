@@ -1,14 +1,14 @@
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
-import { useHttp } from '../../hooks/http.hook';
+import { getDatabase, ref, onValue } from 'firebase/database'
 
-import { fetchEleminations, fetchFighters } from '../../actions';
+import { fightersFetched, eleminationsFetched } from '../../actions';
 
-import Elemination8 from '../elemination8/Elemination8';
-import Elemination12 from '../elemination12/Elemination12';
-import Elemination16 from '../elemination16/Elemination16';
-import Elemination24 from '../elemination24/Elemination24';
-import Elemination32 from '../elemination32/Elemination32';
+import Elemination8 from './elemination8/Elemination8';
+import Elemination12 from './elemination12/Elemination12';
+import Elemination16 from './elemination16/Elemination16';
+import Elemination24 from './elemination24/Elemination24';
+import Elemination32 from './elemination32/Elemination32';
 
 import './elemination.scss';
 
@@ -23,26 +23,50 @@ const Elemination = () => {
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 
     const dispatch = useDispatch();
-    const { request } = useHttp();
+    const database = getDatabase();
+
+    const eleminationRef = ref(database, 'eleminations')
 
     useEffect(() => {
-        dispatch(fetchEleminations(request));
+
+        // подписываемся на обновления Readltime database когда компонент отрендерился 
+
+        const unsubElemination = onValue(eleminationRef, (snapshot) => {
+            const data = snapshot.val();
+            dispatch(eleminationsFetched(data));
+        })
+
+        return function cleanup() {
+            //Отписка по удалению компонента
+            console.log('отписка плейофф')
+            unsubElemination();
+        }
         // eslint-disable-next-line
-    },[]);
+    }, []);
+
+    const fightersRef = ref(database, 'fighters');
 
     useEffect(() => {
-        dispatch(fetchFighters(request));
+
+        // подписываемся на обновления Readltime database когда компонент отрендерился 
+
+        const unsubFighters = onValue(fightersRef, (snapshot) => {
+            const data = snapshot.val();
+            dispatch(fightersFetched(data));
+        })
+
+        return function cleanup() {
+            //Отписка по удалению компонента
+            console.log('отписка бойцов')
+            unsubFighters();
+        }
         // eslint-disable-next-line
     }, []);
 
     const filtredElemination = useMemo(() => {
         const filtredElemination = eleminations.slice();
-
-        console.log(filtredElemination[0].nomination)
-        console.log(activeNomination)
         return filtredElemination.filter(item => item.nomination === activeNomination);
     },[eleminations, activeNomination]);
-
 
 
     if (eleminationsLoadingStatus === "loading") {
@@ -55,6 +79,14 @@ const Elemination = () => {
         return <h5 className="text-center mt-5">Загрузка бойцов</h5>
     } else if (fightersLoadingStatus === "error") {
         return <h5 className="text-center mt-5">Ошибка загрузки бойцов</h5>
+    }
+
+    if (activeNomination === ''){
+        return(
+            <div className="pools__container">
+                <h5 className="text-center mt-5">Выберите номинацию</h5>
+            </div>
+        )
     }
     
 
