@@ -1,2 +1,2 @@
 # openHEMA
-open app dor HEMA(and any other) tournaments
+open app for HEMA(and any other) tournaments
