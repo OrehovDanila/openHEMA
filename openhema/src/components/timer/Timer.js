@@ -76,6 +76,7 @@ const Timer = () => {
             set(ref(database, 'scoreboards/' + activeScoreboard + '/timerWorks'), false);
             setTimer(0);
         }
+     // eslint-disable-next-line
     },[scoreboards[activeScoreboard].timer, localTimer])
 
     let ms = localTimer % 1000;

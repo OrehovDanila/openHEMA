@@ -53,7 +53,7 @@ const AppHeader = () => {
                     <NavLink end type="button" className="btn btn-warning" to="/">Таблицы</NavLink>
                     <NavLink type="button" className="btn btn-warning" to="/scoreboard">Табло</NavLink>
                     <NavLink type="button" className="btn btn-warning" to="/scoreboard-control/pools">Управление таблом</NavLink>
-                    <Button type="button" className="btn btn-warning">Админка</Button>
+                    <NavLink type="button" className="btn btn-warning" to="/admin-panel/nominations">Админка</NavLink>
                     <Button type="button" className="btn btn-warning" onClick={() => dispatch(authToogle())}>Выход</Button>
                 </ButtonGroup>
             )
