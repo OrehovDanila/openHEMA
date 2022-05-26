@@ -4,7 +4,7 @@ import Tabs from "../tabs/Tabs";
 
 const Playoff = () => {
     return (    
-        <div className="App">
+        <div className="app">
         <AppHeader/>
         <main>
           <Tabs/>

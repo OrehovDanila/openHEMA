@@ -4,7 +4,7 @@ import Tabs from "../tabs/Tabs";
 
 const MainPage = () => {
     return (
-        <div className="App">
+        <div className="app">
         <AppHeader/>
         <main>
           <Tabs/>
