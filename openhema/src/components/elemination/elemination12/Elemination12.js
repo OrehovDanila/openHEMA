@@ -14,27 +14,22 @@ const Elemination12 = ({eleminations, fighters}) => {
         })
     };
 
-    let split1Array = eleminations.rounds[1].fights.slice(0,3);
-    let split2Array = eleminations.rounds[1].fights.slice(3,6);
+    let split1Array = eleminations.rounds[1].fights;
 
     split1Array = transformFights(split1Array, fighters);
-    split2Array = transformFights(split2Array, fighters);
 
     const split1 = renderEleminationsRounds(split1Array);
-    const split2 = renderEleminationsRounds(split2Array);
 
     const finales = transformFights(eleminations.rounds[0].fights, fighters);
 
     return(
         <section id="bracket">
             <div className="container">
-
-                <div className="split split-one">                  
-                    <div className="round round-three current">
-                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>			
-                        {split1}									
-                    </div>		
-                </div> 
+                
+                <div className="round round-three current">
+                    <div className="round-details">1/3 финала<br/><span className="date"></span></div>			
+                    {split1}									
+                </div>		
             
                 <div className="champion">
 
@@ -55,14 +50,6 @@ const Elemination12 = ({eleminations, fighters}) => {
                                 <EleminationFight {...finales[2]}/>
                         </div>		
 
-                </div>
-            
-            
-                <div className="split split-two">
-                    <div className="round round-three current">
-                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>	
-                        {split2}									
-                    </div>
                 </div>
 
             </div>

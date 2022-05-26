@@ -1,6 +1,11 @@
 {
     "fighters": [
         {
+            "id": 0,
+            "name": "Заглушка",
+            "club": ""
+        },
+        {
             "id": 1,
             "name": "Орехов Данила",
             "club": "Золотые Леса"
@@ -167,6 +172,7 @@
             "poolName": "Группа 1",
             "nomination": "База классика",
             "status": "ended",
+            "fighters": [1,2,3,4],
             "fights": [
                 {
                     "fightId": 1,
@@ -223,6 +229,7 @@
             "poolName": "Группа 2",
             "nomination": "База классика",
             "status": "ended",
+            "fighters": [5,6,7,8],
             "fights": [
                 {
                     "fightId": 7,
@@ -279,6 +286,7 @@
             "poolName": "Группа 3",
             "nomination": "База классика",
             "status": "running",
+            "fighters": [9,10,11,12],
             "fights": [
                 {
                     "fightId": 13,

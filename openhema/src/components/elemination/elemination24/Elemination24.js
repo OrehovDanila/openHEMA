@@ -14,17 +14,13 @@ const Elemination24 = ({eleminations, fighters}) => {
         })
     };
 
-    const round1AArray = transformFights(eleminations.rounds[1].fights.slice(0,3), fighters);
-    const round1BArray = transformFights(eleminations.rounds[1].fights.slice(3,6), fighters);
+    const round1AArray = transformFights(eleminations.rounds[1].fights, fighters);
 
     const round1A = renderEleminationsRounds(round1AArray);
-    const round1B = renderEleminationsRounds(round1BArray);
 
-    const round2AArray = transformFights(eleminations.rounds[2].fights.slice(0,6), fighters);
-    const round2BArray = transformFights(eleminations.rounds[2].fights.slice(5,12), fighters);
+    const round2AArray = transformFights(eleminations.rounds[2].fights, fighters);
 
     const round2A = renderEleminationsRounds(round2AArray);
-    const round2B = renderEleminationsRounds(round2BArray);
 
     const finales = transformFights(eleminations.rounds[0].fights, fighters);
 
@@ -32,18 +28,17 @@ const Elemination24 = ({eleminations, fighters}) => {
         <section id="bracket">
             <div className="container">
 
-                <div className="split split-one"> 
 
-                    <div className="round round-two current">
-                        <div className="round-details">1/6 финала<br/><span className="date"></span></div>			
-                        {round2A}									
-                    </div>	
+                <div className="round round-two current">
+                    <div className="round-details">1/6 финала<br/><span className="date"></span></div>			
+                    {round2A}									
+                </div>	
 
-                    <div className="round round-three current">
-                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>			
-                        {round1A}									
-                    </div>		
-                </div> 
+                <div className="round round-three current">
+                    <div className="round-details">1/3 финала<br/><span className="date"></span></div>			
+                    {round1A}									
+                </div>		
+
             
                 <div className="champion">
 
@@ -68,18 +63,6 @@ const Elemination24 = ({eleminations, fighters}) => {
                 </div>
             
             
-                <div className="split split-two">
-
-                    <div className="round round-three current">
-                        <div className="round-details">1/3 финала<br/><span className="date"></span></div>	
-                        {round1B}									
-                    </div>
-
-                    <div className="round round-two current">
-                        <div className="round-details">1/6 финала<br/><span className="date"></span></div>			
-                        {round2B}									
-                    </div>	
-                </div>
 
             </div>
         </section>
