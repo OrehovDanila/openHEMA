@@ -13,13 +13,7 @@ const Page404 = lazy(() => import('../pages/404'));
 const App = () => {
 
   const firebaseConfig = {
-    apiKey: "AIzaSyCYvaTL9aeELsjPM3ZlMp0OpIJIX-AGF6w",
-    authDomain: "openhema-588db.firebaseapp.com",
-    databaseURL: "https://openhema-588db-default-rtdb.europe-west1.firebasedatabase.app",
-    projectId: "openhema-588db",
-    storageBucket: "openhema-588db.appspot.com",
-    messagingSenderId: "277209754754",
-    appId: "1:277209754754:web:f7ec28ec6c845b8897d89b"
+    //Firebase API Key
   };
 
   // eslint-disable-next-line
