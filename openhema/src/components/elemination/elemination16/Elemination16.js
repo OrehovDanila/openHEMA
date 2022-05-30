@@ -1,9 +1,12 @@
+import { useSelector } from "react-redux";
+
 import EleminationFight from "../eleminationFight/EleminationFight";
 
 import { useTransformData } from "../../../hooks/transformData.hook";
 
-const Elemination32 = ({eleminations, fighters}) => {
+const Elemination32 = ({eleminations}) => {
 
+    const fighters = useSelector(state => state.fighters.fighters);
     const { transformFights } = useTransformData();
 
     const renderEleminationsRounds = (arr) => {

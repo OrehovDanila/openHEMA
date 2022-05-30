@@ -3,7 +3,7 @@ import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import { initializeApp } from "firebase/app";
 
 
-import { MainPage, Playoff, ScoreboardPage, ScoreboardControlPoolsPage, ScoreboardControlEleminationPage, AdminPanelEleminationPage, AdminPanelFightersPage, AdminPanelNominationPage, AdminPanelPoolsPage } from '../pages';
+import { MainPage, Playoff, ScoreboardPage, ScoreboardControlPage, AdminPanelEleminationPage, AdminPanelFightersPage, AdminPanelNominationPage, AdminPanelPoolsPage } from '../pages';
 
 import "../../style/style.scss"
 
@@ -31,8 +31,7 @@ const App = () => {
         <Route path="/" element={<MainPage />}/>
         <Route path="playoff" element={<Playoff />}/>
         <Route path="scoreboard" element={<ScoreboardPage />}/>
-        <Route path="scoreboard-control/pools" element={<ScoreboardControlPoolsPage />}/>
-        <Route path="scoreboard-control/eleminations" element={<ScoreboardControlEleminationPage />}/>
+        <Route path="scoreboard-control" element={<ScoreboardControlPage />}/>
         <Route path="admin-panel/nominations" element={<AdminPanelNominationPage />}/>
         <Route path="admin-panel/fighters" element={<AdminPanelFightersPage />}/>
         <Route path="admin-panel/pools" element={<AdminPanelPoolsPage />}/>

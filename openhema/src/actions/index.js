@@ -43,6 +43,7 @@ export const scoreboardFightChanges = createAction('SCOREBOARD_FIGHT_CHANGES');
 export const scoreboardActivePoolChanges = createAction('SCOREBOARD_ACTIVE_POOL_CHANGES');
 export const scoreboardActiveFightChanges = createAction('SCOREBOARD_ACTIVE_FIGHT_CHANGES');
 export const scoreboardLocalTimerUpdate = createAction('SCOREBOARD_LOCAL_TIMER_UPDATE');
+export const scoreboardArrayChanges = createAction('SCOREBOARD_ARRAY_CHANGES');
 
 export const scoreboardLocalTimerStart = (createAction('SCOREBOARD_LOCAL_TIMER_START'));
 export const scoreboardLocalTimerStop = createAction('SCOREBOARD_LOCAL_TIMER_STOP');

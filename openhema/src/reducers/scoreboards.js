@@ -12,12 +12,14 @@ import { scoreboardsFetching,
          scoreboardRevercerdViewToogle,
          scoreboardLocalTimerStart,
          scoreboardLocalTimerStop,
-         scoreboardLocalTimerIdSet
+         scoreboardLocalTimerIdSet,
+         scoreboardArrayChanges
           } from "../actions"
 
 const initialState = {
     scoreboardLoadingStatus: 'loading',
     scoreboardActivePool: 0,
+    scoreboardArray: 'pools',
     scoreboardLastGathering: false,
     scoreboardRevercedView: false,
     localTimer: 0,
@@ -74,6 +76,7 @@ const scoreboards = createReducer(initialState,{
     [scoreboardLastGatheringToogle]: state => {state.scoreboardLastGathering = !state.scoreboardLastGathering},
     [scoreboardRevercerdViewToogle]: state => {state.scoreboardRevercedView = !state.scoreboardRevercedView},
     [scoreboardLocalTimerIdSet]: (state, action) => {state.localTimerId = action.payload},
+    [scoreboardArrayChanges]: (state, action) => {state.scoreboardArray = action.payload}
 })
 
 export default scoreboards;

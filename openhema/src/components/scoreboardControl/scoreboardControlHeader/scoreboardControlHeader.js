@@ -12,18 +12,26 @@ import {
     scoreboardFightChanges,
     poolsFetched,
     nominationsFetched,
-    scoreboardsFetched, } from "../../../actions";
+    scoreboardsFetched,
+    eleminationsFetched,
+    scoreboardArrayChanges } from "../../../actions";
 
-const ScoreboardControlPoolsHeader = () => {
+const ScoreboardControlHeader = () => {
 
     const pools = useSelector(state => state.pools.pools);
-    const activePool = useSelector(state => state.scoreboards.scoreboardActivePool);
+    const activeArray = useSelector(state => state.scoreboards.scoreboardActivePool);
+    const scoreboardArray = useSelector(state => state.scoreboards.scoreboardArray);
+
     const activeScoreboard = useSelector(state => state.scoreboards.activeScoreboard);
     const poolsLoadingStatus = useSelector(state => state.pools.poolsLoadingStatus);
+    const eleminations = useSelector(state => state.eleminations.eleminations);
+    const eleminationsLoadingStatus = useSelector(state => state.eleminations.eleminationsLoadingStatus);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
     const nominations = useSelector(state => state.nominations.nominations);
+    const nominationsLoadingStatus = useSelector(state => state.nominations.nominationsLoadingStatus);
     const scoreboardLoadingStatus = useSelector(state => state.scoreboards.scoreboardLoadingStatus);
+    
 
     const dispatch = useDispatch();
 
@@ -32,6 +40,7 @@ const ScoreboardControlPoolsHeader = () => {
     const scoreboardsRef = ref(database, 'scoreboards');
     const nominationRef = ref(database, 'nominations');
     const poolsRef = ref(database, 'pools');
+    const eleminationsRef = ref(database, 'eleminations');
 
     useEffect(() => {
 
@@ -85,12 +94,79 @@ const ScoreboardControlPoolsHeader = () => {
         // eslint-disable-next-line
     }, []);
 
+    
+    useEffect(() => {
+
+        // подписываемся на обновления Readltime database когда компонент отрендерился 
+
+        const unsubEleminations = onValue(eleminationsRef, (snapshot) => {
+            const data = snapshot.val();
+            dispatch(eleminationsFetched(data));
+        })
+
+        return function cleanup() {
+            //Отписка по удалению компонента
+            console.log('отписка пулов')
+            unsubEleminations();
+        }
+        // eslint-disable-next-line
+    }, []);
+
     const filtredPools = useMemo(() => {
         const filtredPools = pools.slice();
         return filtredPools.filter(item => item.nomination === activeNomination);
     },[pools, activeNomination]);
 
-    const activePoolValue = pools.find((item) => item.poolId === activePool);
+
+    if (poolsLoadingStatus === "loading") {
+        return <h5 className="text-center mt-5">Загрузка групп</h5>
+    } else if (poolsLoadingStatus === "error") {
+        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
+    }
+    if (scoreboardLoadingStatus === "loading") {
+        return <h5 className="text-center mt-5">Загрузка групп</h5>
+    } else if (scoreboardLoadingStatus === "error") {
+        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
+    };
+
+    if (eleminationsLoadingStatus === "loading") {
+        return <h5 className="text-center mt-5">Загрузка групп</h5>
+    } else if (eleminationsLoadingStatus === "error") {
+        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
+    }
+
+    if (nominationsLoadingStatus === "loading") {
+        return <h5 className="text-center mt-5">Загрузка групп</h5>
+    } else if (nominationsLoadingStatus === "error") {
+        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
+    }
+
+    if (activeNomination === ''){
+        dispatch(nominationChanges(nominations[0]))
+    }
+
+    const filtredElemination = eleminations.slice().filter(item => item.nomination === activeNomination);
+
+    let activeArrayValue;
+    if(scoreboardArray === 'pools'){
+        activeArrayValue = pools.find((item) => item.poolId === activeArray);
+    } else if(scoreboardArray === 'elemination'){
+        activeArrayValue = filtredElemination[0].rounds.find((item) => item.RoundId === activeArray);
+    }
+
+    let RenderArray;
+    if(scoreboardArray === 'pools'){
+        RenderArray = filtredPools;
+    } else if(scoreboardArray === 'elemination'){
+        RenderArray = filtredElemination[0].rounds;
+    }
+
+    let scoreboardTitle;
+    if(scoreboardArray === 'pools'){
+        scoreboardTitle = 'Группы';
+    } else if(scoreboardArray === 'elemination'){
+        scoreboardTitle = 'Раунды';
+    }
 
     const renderNomination = (arr) => {
         return arr.map((item) => {
@@ -104,6 +180,14 @@ const ScoreboardControlPoolsHeader = () => {
         return arr.map((item) => {
             return (
                 <Dropdown.Item key={item.poolId} onClick={() => dispatch(scoreboardActivePoolChanges(item.poolId))}>{item.poolName}</Dropdown.Item>
+            )
+        })
+    }
+
+    const renderEleminations = (arr) => {
+        return arr.map((item) => {
+            return (
+                <Dropdown.Item key={item.RoundId} onClick={() => dispatch(scoreboardActivePoolChanges(item.RoundId))}>{item.RoundName}</Dropdown.Item>
             )
         })
     }
@@ -122,27 +206,43 @@ const ScoreboardControlPoolsHeader = () => {
             )
         })
     };
+
+    const renderButtons = (scoreboardArray) => {
+        if(scoreboardArray === 'pools'){
+            return(
+                <Button className="btn btn-success" type="button" onClick={() => dispatch(scoreboardArrayChanges('elemination'))}>Плейофф</Button>
+            )
+        }else if(scoreboardArray === 'elemination'){
+            return(
+                <Button className="btn btn-success" type="button" onClick={() => dispatch(scoreboardArrayChanges('pools'))}>Группа</Button>
+            )
+        }
+    }
+
+    const renderArray = (scoreboardArray, activeArray) => {
+        if(scoreboardArray === 'pools'){
+            return renderPools(activeArray);
+        }else if(scoreboardArray === 'elemination'){
+            return renderEleminations(activeArray);
+        }
+    }
     
-    if (poolsLoadingStatus === "loading") {
-        return <h5 className="text-center mt-5">Загрузка групп</h5>
-    } else if (poolsLoadingStatus === "error") {
-        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
-    }
-    if (scoreboardLoadingStatus === "loading") {
-        return <h5 className="text-center mt-5">Загрузка групп</h5>
-    } else if (scoreboardLoadingStatus === "error") {
-        return <h5 className="text-center mt-5">Ошибка загрузки групп</h5>
-    };
 
-    if (activeNomination === ''){
-        dispatch(nominationChanges(nominations[0]))
+    let activeFights = [];
+
+    if(activeArrayValue){
+        activeFights = activeArrayValue.fights;
     }
 
-    const fightElement = renderFights(activePoolValue.fights);
+    const fightElement = renderFights(activeFights);
 
-    const poolElements = renderPools(filtredPools);
+    const arrayElements = renderArray(scoreboardArray, RenderArray)
 
     const nominationElements = renderNomination(nominations);
+
+    const buttonElements = renderButtons(scoreboardArray);
+
+
 
     return(
         <div className="control__header">
@@ -169,12 +269,9 @@ const ScoreboardControlPoolsHeader = () => {
                 <DropdownButton className="control__button__group__nomination" id="dropdown-basic-button" title="Номинации">
                     {nominationElements}
                 </DropdownButton>
-                <ButtonGroup className="control__button__group__pools/playoff">
-                    <NavLink className="btn btn-success" type="button" to="/scoreboard-control/pools">Группа</NavLink>
-                    <NavLink className="btn btn-success" type="button" to="/scoreboard-control/eleminations">Плейофф</NavLink>
-                </ButtonGroup>
-                <DropdownButton className="control__button__group__pool/round" id="dropdown-basic-button" title="Группы">
-                    {poolElements}
+                {buttonElements}
+                <DropdownButton className="control__button__group__pool/round" id="dropdown-basic-button" title={scoreboardTitle}>
+                    {arrayElements}
                 </DropdownButton>
                 <DropdownButton className="control__button__group__fights" id="dropdown-basic-button" title="Бои">
                     {fightElement}
@@ -184,4 +281,4 @@ const ScoreboardControlPoolsHeader = () => {
     )
 }
 
-export default ScoreboardControlPoolsHeader;
+export default ScoreboardControlHeader;

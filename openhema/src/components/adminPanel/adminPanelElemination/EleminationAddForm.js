@@ -87,7 +87,7 @@ const EleminationAddForm = () => {
                 case '8':
                     nominationRounds = [
                         {
-                            RoundId: 0,
+                            RoundId: uuidv4(),
                             RoundName: "Финал",
                             fights: [
                                         {
@@ -109,7 +109,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 1,
+                            RoundId: uuidv4(),
                             RoundName: "Полуфинал",
                             fights: [
                                         {
@@ -131,7 +131,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 2,
+                            RoundId: uuidv4(),
                             RoundName: "1/4 финала",
                             fights: [
                                         {
@@ -173,7 +173,7 @@ const EleminationAddForm = () => {
                 case '12':
                     nominationRounds = [
                         {
-                            RoundId: 0,
+                            RoundId: uuidv4(),
                             RoundName: "Финал трёх",
                             fights: [
                                         {
@@ -203,7 +203,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 1,
+                            RoundId: uuidv4(),
                             RoundName: "1/6 финала",
                             fights: [
                                         {
@@ -237,7 +237,7 @@ const EleminationAddForm = () => {
                 case '16':
                     nominationRounds = [
                         {
-                            RoundId: 0,
+                            RoundId: uuidv4(),
                             RoundName: "Финал",
                             fights: [
                                         {
@@ -259,7 +259,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 1,
+                            RoundId: uuidv4(),
                             RoundName: "Полуфинал",
                             fights: [
                                         {
@@ -281,7 +281,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 2,
+                            RoundId: uuidv4(),
                             RoundName: "1/4 финала",
                             fights: [
                                         {
@@ -319,7 +319,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 3,
+                            RoundId: uuidv4(),
                             RoundName: "1/8 финала",
                             fights: [
                                         {
@@ -393,7 +393,7 @@ const EleminationAddForm = () => {
                 case '24': 
                 nominationRounds = [
                     {
-                        RoundId: 0,
+                        RoundId: uuidv4(),
                         RoundName: "Финал трёх",
                         fights: [
                                     {
@@ -423,7 +423,7 @@ const EleminationAddForm = () => {
                                 ]
                     },
                     {
-                        RoundId: 1,
+                        RoundId: uuidv4(),
                         RoundName: "1/6 финала",
                         fights: [
                                     {
@@ -453,7 +453,7 @@ const EleminationAddForm = () => {
                                 ]
                     },
                     {
-                        RoundId: 2,
+                        RoundId: uuidv4(),
                         RoundName: "1/12 финала",
                         fights: [
                                     {
@@ -511,7 +511,7 @@ const EleminationAddForm = () => {
                 case '32':
                     nominationRounds = [
                         {
-                            RoundId: 0,
+                            RoundId: uuidv4(),
                             RoundName: "Финал",
                             fights: [
                                         {
@@ -533,7 +533,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 1,
+                            RoundId: uuidv4(),
                             RoundName: "Полуфинал",
                             fights: [
                                         {
@@ -555,7 +555,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 2,
+                            RoundId: uuidv4(),
                             RoundName: "1/4 финала",
                             fights: [
                                         {
@@ -593,7 +593,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 3,
+                            RoundId: uuidv4(),
                             RoundName: "1/8 финала",
                             fights: [
                                         {
@@ -663,7 +663,7 @@ const EleminationAddForm = () => {
                                     ]
                         },
                         {
-                            RoundId: 4,
+                            RoundId: uuidv4(),
                             RoundName: "1/16 финала",
                             fights: [
                                         {

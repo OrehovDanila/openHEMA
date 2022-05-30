@@ -16,7 +16,7 @@ const AdminPanelHeader = () => {
             <ButtonGroup className="app__buttonGroup">
                 <NavLink type="button" className="btn btn-warning" to="/">Таблицы</NavLink>
                 <NavLink type="button" className="btn btn-warning" to="/scoreboard">Табло</NavLink>
-                <NavLink type="button" className="btn btn-warning" to="/scoreboard-control/pools">Управление таблом</NavLink>
+                <NavLink type="button" className="btn btn-warning" to="/scoreboard-control">Управление таблом</NavLink>
                 <Button type="button" className="btn btn-warning" to="/admin-panel/nominations">Админка</Button>
                 <Button type="button" className="btn btn-warning" onClick={() => dispatch(authToogle())}>Выход</Button>
             </ButtonGroup>

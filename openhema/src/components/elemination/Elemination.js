@@ -18,7 +18,6 @@ const Elemination = () => {
     const eleminations = useSelector(state => state.eleminations.eleminations);
 
     const fightersLoadingStatus = useSelector(state => state.fighters.fightersLoadingStatus);
-    const fighters = useSelector(state => state.fighters.fighters);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 
@@ -95,23 +94,23 @@ const Elemination = () => {
     switch(type){
         case '8':
             return (
-                <Elemination8 eleminations={filtredElemination[0]} fighters={fighters}/>
+                <Elemination8 eleminations={filtredElemination[0]} />
             )
         case '12':
             return (
-                <Elemination12 eleminations={filtredElemination[0]} fighters={fighters}/>
+                <Elemination12 eleminations={filtredElemination[0]} />
             )
         case '16':
             return (
-                <Elemination16 eleminations={filtredElemination[0]} fighters={fighters}/>
+                <Elemination16 eleminations={filtredElemination[0]} />
             )
         case '24':
             return(
-                <Elemination24 eleminations={filtredElemination[0]} fighters={fighters}/>
+                <Elemination24 eleminations={filtredElemination[0]} />
             )
         case '32':
             return(
-                <Elemination32 eleminations={filtredElemination[0]} fighters={fighters}/>
+                <Elemination32 eleminations={filtredElemination[0]} />
             )
         
         default: 

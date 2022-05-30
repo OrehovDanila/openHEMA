@@ -44,6 +44,9 @@
             position: relative;
             min-height: 50px;
             border-collapse: collapse;
+            &_selected{
+                border: solid red 2px;
+            }
             &__container{
                 display: flex;
                 justify-content: space-around;

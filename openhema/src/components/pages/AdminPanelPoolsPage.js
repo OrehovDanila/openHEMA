@@ -2,11 +2,13 @@ import AdminPanelHeader from "../adminPanel/adminPanelHeader/AdminPanelHeader";
 import AdminPanelPools from "../adminPanel/adminPanelPools/AdminPanelPools";
 import PoolsAddForm from "../adminPanel/adminPanelPools/PoolsAddForm";
 import Tabs from "../tabs/Tabs";
+import AuthErrorModal from "../authError/AuthError";
 
 const AdminPanelPoolsPage = () => {
     return(
         <div className="App">
             <AdminPanelHeader/>
+            <AuthErrorModal/>
             <main>
                 <Tabs />
                 <div className="admin__container">

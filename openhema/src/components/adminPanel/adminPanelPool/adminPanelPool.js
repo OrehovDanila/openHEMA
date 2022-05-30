@@ -8,9 +8,19 @@ const AdminPanelPool = ( {poolName, fights, fighters, onDelete, index, onFighter
     const allFighters = useSelector(state => state.fighters.fighters);
     const [toogleFighters, setToogleFighters] = useState(false);
     const [toogleEdition, setToogleEdition] = useState(false);
+    const [selectedFight, setSelectedFight] = useState();
 
     const onEditionButtonPool = (fightIndex, counter) => {
-        onEditionButton(poolId, fightIndex, counter)
+        onEditionButton(poolId, fightIndex, counter);
+        setSelectedFight(selectedFight+counter);
+    }
+
+    const onFightClick = (fightIndex) => {
+        if(toogleEdition){
+            setSelectedFight(fightIndex);
+        } else {
+            setSelectedFight(null);
+        }
     }
 
 
@@ -20,8 +30,16 @@ const AdminPanelPool = ( {poolName, fights, fighters, onDelete, index, onFighter
             const fighter1 = allFighters.find((item) => item.id ===fighter1id).name;
             const fighter2id = item.fighter2Id;
             const fighter2 = allFighters.find((item) => item.id ===fighter2id).name;
+            const className = selectedFight === i? 'admin__item__fight_selected': '';
+
             return(
-                <AdminPoolFight key={item.fightId} fighter1={fighter1} fighter2={fighter2} toogleEdition={toogleEdition} onEditionButton={onEditionButtonPool} index={i}/>
+                <AdminPoolFight 
+                key={item.fightId} 
+                fighter1={fighter1} 
+                fighter2={fighter2} 
+                className={className} 
+                onFightClick={onFightClick}
+                fightIndex={i}/>
             )
         })
     }
@@ -42,17 +60,47 @@ const AdminPanelPool = ( {poolName, fights, fighters, onDelete, index, onFighter
         })
     };
 
+    const renderButton = (toogleFighters, toogleEdition) => {
+        if(toogleFighters) {
+            return(
+                <ButtonGroup>
+                    <Button onClick={() => setFights(poolId)}>Сгенерировать бои</Button>
+                    <Button onClick={() => setToogleFighters(!toogleFighters)}>Бои/Бойцы</Button>
+                    <Button onClick={() => {onDelete(index)}}>Удалить</Button>
+                </ButtonGroup>
+            )
+        } else if(toogleEdition){
+            return(
+                <ButtonGroup>
+                    <Button onClick={() => {
+                        setToogleEdition(!toogleEdition);
+                        setSelectedFight(null);
+                        }}>Редактировать</Button>
+                    <Button  onClick={() => onEditionButtonPool(selectedFight,-1)} >&#9650;</Button>
+                    <Button  onClick={() => onEditionButtonPool(selectedFight,1)} >&#9660;</Button>
+                    <Button onClick={() => setToogleFighters(!toogleFighters)}>Бои/Бойцы</Button>
+                    <Button onClick={() => {onDelete(index)}}>Удалить</Button>
+                </ButtonGroup>
+            )
+        } else{
+            return(
+                <ButtonGroup>
+                    <Button onClick={() => setToogleEdition(!toogleEdition)}>Редактировать</Button>
+                    <Button>&#9650;</Button>
+                    <Button>&#9660;</Button>
+                    <Button onClick={() => setToogleFighters(!toogleFighters)}>Бои/Бойцы</Button>
+                    <Button onClick={() => {onDelete(index)}}>Удалить</Button>
+                </ButtonGroup>
+            )
+        }
+    };
+
 
     const elements = toogleFighters? 
         fighters?  renderFighters(fighters) :'Бойцов нет' :
         fights? renderFights(fights) : 'Боёв нет';
-
-
-    const generButton = toogleFighters? 
-        <Button onClick={() => setFights(poolId)}>Сгенерировать бои</Button> :
-        <Button onClick={() => setToogleEdition(!toogleEdition)}>Редактировать</Button>
-
     
+    const buttonsElements = renderButton(toogleFighters, toogleEdition);
 
     return(
         <div  className="admin__item">
@@ -61,11 +109,7 @@ const AdminPanelPool = ( {poolName, fights, fighters, onDelete, index, onFighter
             <div className="admin__item__fights">
                 {elements}
             </div>
-            <ButtonGroup>
-                {generButton}
-                <Button onClick={() => setToogleFighters(!toogleFighters)}>Бои/Бойцы</Button>
-                <Button onClick={() => {onDelete(index)}}>Удалить</Button>
-            </ButtonGroup>
+            {buttonsElements}
         </div>
     )
 }

@@ -1,6 +1,4 @@
-import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
-import { Button, ButtonGroup } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import classNames from 'classnames';
 import { getDatabase, ref, onValue } from 'firebase/database'
@@ -9,7 +7,7 @@ import ServerTimer from "../timer/serverTimer";
 
 import './scoreboard.scss'
 
-import { authToogle, scoreboardsFetched, scoreboardChanges } from "../../actions";
+import { scoreboardsFetched } from "../../actions";
 
 
 const Scoreboard = () => {
@@ -56,8 +54,6 @@ const Scoreboard = () => {
         }
     };
 
-    console.log(scoreboards[activeScoreboard])
-
     const nextFighter1 = renderNextFighter(scoreboards[activeScoreboard].fightInfo.fighter1.nextName);
     const nextFighter2 = renderNextFighter(scoreboards[activeScoreboard].fightInfo.fighter2.nextName);
     
@@ -66,26 +62,6 @@ const Scoreboard = () => {
 
     return(
         <div className="scoreboard_container">   
-            <div className="scoreboard_header scoreboard_header_big">
-                <ButtonGroup className="app__buttonGroup">
-                    <NavLink type="button" className="btn btn-warning" to="/">Таблицы</NavLink>
-                    <NavLink type="button" className="btn btn-warning" to="/scoreboard">Табло</NavLink>
-                    <NavLink type="button" className="btn btn-warning" to="/scoreboard-control/pools">Управление таблом</NavLink>
-                    <Button type="button" className="btn btn-warning" to="/admin-panel/nominations">Админка</Button>
-                    <Button type="button" className="btn btn-warning" onClick={() => dispatch(authToogle())}>Выход</Button>
-                </ButtonGroup>
-
-                <div className="control__button__group__scoreboardID">
-                    <h5>Номер табло</h5>
-                    <ButtonGroup className="me-2">
-                        <Button onClick={() => dispatch(scoreboardChanges(0))} variant="success">1</Button>
-                        <Button onClick={() => dispatch(scoreboardChanges(1))} variant="success">2</Button>
-                        <Button onClick={() => dispatch(scoreboardChanges(2))} variant="success">3</Button> 
-                        <Button onClick={() => dispatch(scoreboardChanges(3))} variant="success">4</Button>
-                    </ButtonGroup>
-                </div>
-            </div>
-
             <div className={scoreboardClass}>
                 <div className="scores1_big">
                     <h5>{scoreboards[activeScoreboard].fightInfo.fighter1.name}</h5>
