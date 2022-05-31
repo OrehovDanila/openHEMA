@@ -1,0 +1,60 @@
+.pool{
+    flex-basis: 45%;
+    margin-top: 60px;
+    margin-right: 24px;
+    position: relative;
+
+    
+    &__body{
+        border: solid gray 1px;
+        border-collapse: collapse;
+        border-radius: 10px;
+        background-color: #D7D7D7;
+        box-shadow: 5px 5px 4px rgba(0, 0, 0, 0.25);
+    }
+    &__fight{
+        display: flex;
+        border-collapse: collapse;
+        border: solid gray 1px;
+        border-radius: 10px 10px 10px 10px;
+    }
+    &__fighter{
+        display: flex;
+        flex-basis: 50%;
+        &__title{
+            flex-grow: 1;
+            line-height: 1;
+            padding: 4px 12px;
+        }
+        &__club{
+            font-weight: lighter;
+            font-size: small;
+        }
+    }
+}
+
+.scores{
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+    border-collapse: collapse;
+    flex: 0 0 50px;
+    font-weight: 600;
+    padding: 8px 4px 4px;
+    text-align: center;
+}
+
+.right {
+    flex-direction: row-reverse;
+}
+
+.winner{
+    background-color: #FFDB81;
+}
+
+.draw{
+    background-color: #F08080;
+}
+
+.activePool{
+    border-color: black;
+}

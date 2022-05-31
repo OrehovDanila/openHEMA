@@ -1,0 +1,42 @@
+.control{
+    &__container{
+        display: flex;
+        justify-content: space-evenly;
+        background-color: #DEDCDC;
+        height: 800px;
+        padding-top: 100px;
+        &__center{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around
+        }
+    }
+}
+
+
+.scoreboard_reverced{
+    flex-direction: row-reverse;
+}
+
+@media( max-width: 800px){
+    .scoreboard__preview{
+        display: none;
+    }
+    .scoreboard__preview__info{
+        display: none;
+    }
+    .control__header__title{
+        display: none;
+    }
+    .control__container{
+        align-items: flex-start;
+    }
+    .control__button__group{
+        padding-top: 100px;
+        flex-wrap: wrap
+    }
+    .app__buttonGroup{
+        flex-wrap: wrap;
+    }
+}

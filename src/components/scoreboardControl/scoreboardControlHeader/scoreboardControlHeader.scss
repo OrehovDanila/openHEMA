@@ -1,0 +1,15 @@
+.control{
+    &__header{
+        position: relative;
+        &__title{
+            margin-left: 100px;
+        }
+    }
+    &__button__group{
+        margin-top: 50px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: flex-end;
+    }
+}
+

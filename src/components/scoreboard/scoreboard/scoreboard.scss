@@ -1,0 +1,58 @@
+.scoreboard {
+
+    &__preview_big{
+        background: rgb(255,0,0);
+        background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(255,0,0,1) 50%, rgba(0,22,255,1) 50%);
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 800px;
+    }
+
+    &_reverced_big{
+        flex-direction: row-reverse;
+        background: rgb(0,22,255);
+        background: linear-gradient(90deg, rgba(0,22,255,1) 50%, rgba(255,0,0,1) 50%, rgba(255,0,0,1) 100%);
+    }
+
+    &__scores_big{
+        font-size: 300px;
+        color: white;
+    }
+}
+
+.scores1_big{
+    color: white;
+    h5 {
+        font-size: 40px;
+    }
+    h6{
+        font-size: 30px;
+    }
+}
+
+
+.scores2_big{
+    color: white;
+    h5 {
+        font-size: 40px;
+    }
+    h6{
+        font-size: 30px;
+    }
+}
+
+
+@media( display-mode: fullscreen ){
+    .scoreboard_header_big{
+        display: none;
+    }
+    .scoreboard__preview_big{
+        height: 1050px;
+    }
+    .scoreboard_container{
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+}
