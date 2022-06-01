@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
 import { getDatabase, ref, onValue, set } from 'firebase/database';
 import { v4 as uuidv4 } from 'uuid';
-import { fightersFetched } from "../../pools/fightersSlice";
+import { fightersFetched } from "../fightersSlice";
 import { poolsFetched } from "../../pools/poolsSlice";
 import AdminPanelPool from "../adminPanelPool/adminPanelPool";
 

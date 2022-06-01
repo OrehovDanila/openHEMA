@@ -8,9 +8,8 @@ import { scoreboardActivePoolChanges, scoreboardArrayChanges } from "../scoreboa
 
 import { scoreboardChanges, scoreboardFightChanges, scoreboardsFetched } from "../../scoreboard/scoreboard/scoreboardsSlice";
 
-import { eliminationsFetched } from "../../elimination/elininationsSlice";
+import { poolsFetched, eliminationsFetched } from "../scoreboardControlSlice";
 import { nominationsFetched, nominationChanges } from "../../tabs/nominationsSlice";
-import { poolsFetched } from "../../pools/poolsSlice";
 import { authToogle } from "../../modal/modalSlice";
 
 import "./scoreboardControlHeader.scss"
@@ -19,15 +18,15 @@ import "./scoreboardControlHeader.scss"
 
 const ScoreboardControlHeader = () => {
 
-    const pools = useSelector(state => state.pools.pools);
+    const pools = useSelector(state => state.scoreboardsControl.pools);
 
     const activeArray = useSelector(state => state.scoreboardsControl.scoreboardActivePool);
     const scoreboardArray = useSelector(state => state.scoreboardsControl.scoreboardArray);
 
     const activeScoreboard = useSelector(state => state.scoreboards.activeScoreboard);
-    const poolsLoadingStatus = useSelector(state => state.pools.poolsLoadingStatus);
-    const eliminations = useSelector(state => state.eliminations.eliminations);
-    const eliminationsLoadingStatus = useSelector(state => state.eliminations.eliminationsLoadingStatus);
+    const poolsLoadingStatus = useSelector(state => state.scoreboardsControl.poolsLoadingStatus);
+    const eliminations = useSelector(state => state.scoreboardsControl.eliminations);
+    const eliminationsLoadingStatus = useSelector(state => state.scoreboardsControl.eliminationsLoadingStatus);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
     const nominations = useSelector(state => state.nominations.nominations);

@@ -3,8 +3,7 @@ import { useDispatch, useSelector} from 'react-redux';
 import { getDatabase, ref, onValue } from 'firebase/database'
 
 import Pool from "./pool/pool";
-import { fightersFetched } from './fightersSlice';
-import { poolsFetched } from './poolsSlice';
+import { poolsFetched, fightersFetched } from './poolsSlice';
 
 import "./pools.scss"
 
@@ -14,7 +13,7 @@ const Pools = () => {
 
     const poolsLoadingStatus = useSelector(state => state.pools.poolsLoadingStatus);
     const pools = useSelector(state => state.pools.pools);
-    const fightersLoadingStatus = useSelector(state => state.fighters.fightersLoadingStatus);
+    const fightersLoadingStatus = useSelector(state => state.pools.fightersLoadingStatus);
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 
     // Значение отфильтрованных групп запоминаем, что бы не ререндерить при внешних ихменениях

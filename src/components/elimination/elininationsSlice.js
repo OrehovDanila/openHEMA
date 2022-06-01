@@ -11,7 +11,9 @@ const initialState = {
             fights: []
         }]
         
-    }]
+    }],
+    fighterLoadingStatus: "idle",
+    fighters: []
 };
 
 const eliminationsSlice = createSlice({
@@ -24,6 +26,12 @@ const eliminationsSlice = createSlice({
             state.eliminations = action.payload;
         },
         eliminationsFetchingError: state => {state.eliminationsLoadingStatus = 'error'},
+        fightersFetching: state => {state.fighterLoadingStatus = 'loading'},
+        fightersFetched: (state, action) => {
+            state.fighterLoadingStatus = 'idle';
+            state.fighters = action.payload;
+        },
+        fightersFetchingError: state => {state.fighterLoadingStatus = 'error'}
     }
 });
 
@@ -31,4 +39,4 @@ const {actions, reducer} = eliminationsSlice;
 
 export default reducer;
 
-export const { eliminationsFetching, eliminationsFetched, eliminationsFetchingError } = actions;
+export const { eliminationsFetching, eliminationsFetched, eliminationsFetchingError, fightersFetching, fightersFetched, fightersFetchingError } = actions;

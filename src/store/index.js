@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import fighters from '../components/pools/fightersSlice'
+import fighters from '../components/adminPanel/fightersSlice'
 import eliminations from '../components/elimination/elininationsSlice'
 import scoreboards from '../components/scoreboard/scoreboard/scoreboardsSlice'
 import authModal from '../components/modal/modalSlice';

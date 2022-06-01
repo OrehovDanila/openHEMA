@@ -8,7 +8,7 @@ import { useTransformData } from "../../../hooks/transformData.hook";
 
 const Elimination12 = ({eliminations}) => {
 
-    const fighters = useSelector(state => state.fighters.fighters);
+    const fighters = useSelector(state => state.elimination.fighters);
     const { transformFights } = useTransformData();
 
     const renderEliminationsRounds = (arr) => {

@@ -25,7 +25,7 @@ const ScoreboardTimeControl = ({activeArrayValue}) => {
     const activeArray = useSelector(state => state.scoreboardsControl.scoreboardActivePool);
     const scoreboardArray = useSelector(state => state.scoreboardsControl.scoreboardArray);
 
-    const eliminations = useSelector(state => state.eliminations.eliminations);
+    const eliminations = useSelector(state => state.scoreboardsControl.eliminations);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 

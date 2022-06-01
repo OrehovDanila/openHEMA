@@ -8,6 +8,23 @@ const initialState = {
     localTimer: 0,
     localTimerId: null,
     localTimerStatus: 'stop',
+    poolsLoadingStatus: "idle",
+    fighterLoadingStatus: "idle",
+    fighters: [],
+    pools: [{
+        poolId: 0,
+        fights: []
+    }],
+    eliminationsLoadingStatus: "loading",
+    eliminations: [{
+        eliminationType: '',
+        nomination: '',
+        rounds: [{
+            roundId: 0,
+            fights: []
+        }]
+        
+    }],
 };
 
 const scoredboardsControlSlice = createSlice({
@@ -21,7 +38,25 @@ const scoredboardsControlSlice = createSlice({
         scoreboardLastGatheringToogle: state => {state.scoreboardLastGathering = !state.scoreboardLastGathering},
         scoreboardRevercerdViewToogle: state => {state.scoreboardRevercedView = !state.scoreboardRevercedView},
         scoreboardLocalTimerIdSet: (state, action) => {state.localTimerId = action.payload},
-        scoreboardArrayChanges: (state, action) => {state.scoreboardArray = action.payload}
+        scoreboardArrayChanges: (state, action) => {state.scoreboardArray = action.payload},
+        poolsFetching: state => {state.poolsLoadingStatus = 'loading'},
+        poolsFetched: (state, action) => {
+            state.poolsLoadingStatus = 'idle';
+            state.pools = action.payload;
+        },
+        poolsFetchingError: state => {state.poolsLoadingStatus = 'error'},
+        fightersFetching: state => {state.fighterLoadingStatus = 'loading'},
+        fightersFetched: (state, action) => {
+            state.fighterLoadingStatus = 'idle';
+            state.fighters = action.payload;
+        },
+        fightersFetchingError: state => {state.fighterLoadingStatus = 'error'},
+        eliminationsFetching: state => {state.eliminationsLoadingStatus = 'loading'},
+        eliminationsFetched: (state, action) => {
+            state.eliminationsLoadingStatus = 'idle';
+            state.eliminations = action.payload;
+        },
+        eliminationsFetchingError: state => {state.eliminationsLoadingStatus = 'error'},
     }
 });
 
@@ -36,4 +71,13 @@ export const {scoreboardActivePoolChanges,
             scoreboardLocalTimerStart,
             scoreboardLocalTimerStop,
             scoreboardLocalTimerIdSet,
-            scoreboardArrayChanges} = actions;
+            scoreboardArrayChanges,
+            poolsFetching,
+            poolsFetched,
+            poolsFetchingError, 
+            eliminationsFetching, 
+            eliminationsFetched,
+            eliminationsFetchingError, 
+            fightersFetching, 
+            fightersFetched, 
+            fightersFetchingError} = actions;

@@ -19,7 +19,7 @@ const ScoreboardPreview = ({activeArrayValue}) => {
     const activeScoreboard = useSelector(state => state.scoreboards.activeScoreboard);
     const scoreboardRevercedView = useSelector(state => state.scoreboardsControl.scoreboardRevercedView);
 
-    const fighters = useSelector(state => state.fighters.fighters)
+    const fighters = useSelector(state => state.scoreboardsControl.fighters)
 
     const activeFightId = scoreboards[activeScoreboard].fightId;
 

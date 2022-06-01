@@ -9,7 +9,7 @@ import "./pool.scss"
 
 const Pool = ({poolName, status, fights}) => {
 
-    const fighters = useSelector(state => state.fighters.fighters);
+    const fighters = useSelector(state => state.pools.fighters);
     const { transformFights } = useTransformData();
 
     let poolStatus = '';

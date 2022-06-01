@@ -3,7 +3,7 @@ import { useEffect, useMemo } from 'react';
 import { getDatabase, ref, onValue, set } from 'firebase/database'
 import classNames from 'classnames';
 
-import { fightersFetched } from "../../pools/fightersSlice";
+import { fightersFetched } from "../scoreboardControlSlice";
 
 import './scoreboardControl.scss';
 
@@ -24,13 +24,13 @@ const ScoreboardControl = () => {
     const activeArray = useSelector(state => state.scoreboardsControl.scoreboardActivePool);
     const scoreboardArray = useSelector(state => state.scoreboardsControl.scoreboardArray);
 
-    const poolsLoadingStatus = useSelector(state => state.pools.poolsLoadingStatus);
-    const fightersLoadingStatus = useSelector(state => state.fighters.fightersLoadingStatus);
+    const poolsLoadingStatus = useSelector(state => state.scoreboardsControl.poolsLoadingStatus);
+    const fightersLoadingStatus = useSelector(state => state.scoreboardsControl.fightersLoadingStatus);
 
-    const pools = useSelector(state => state.pools.pools);
+    const pools = useSelector(state => state.scoreboardsControl.pools);
 
-    const eliminations = useSelector(state => state.eliminations.eliminations);
-    const eliminationsLoadingStatus = useSelector(state => state.eliminations.eliminationsLoadingStatus);
+    const eliminations = useSelector(state => state.scoreboardsControl.eliminations);
+    const eliminationsLoadingStatus = useSelector(state => state.scoreboardsControl.eliminationsLoadingStatus);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 

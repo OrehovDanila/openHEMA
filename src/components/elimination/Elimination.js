@@ -2,8 +2,7 @@ import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector} from 'react-redux';
 import { getDatabase, ref, onValue } from 'firebase/database'
 
-import { eliminationsFetched } from './elininationsSlice';
-import { fightersFetched } from '../pools/fightersSlice';
+import { eliminationsFetched, fightersFetched } from './elininationsSlice';
 
 import Elimination8 from './elimination8/Elimination8';
 import Elimination12 from './elimination12/Elimination12';
@@ -20,7 +19,7 @@ const Elimination = () => {
     const eliminationsLoadingStatus = useSelector(state => state.eliminations.eliminationsLoadingStatus);
     const eliminations = useSelector(state => state.eliminations.eliminations);
 
-    const fightersLoadingStatus = useSelector(state => state.fighters.fightersLoadingStatus);
+    const fightersLoadingStatus = useSelector(state => state.eliminations.fightersLoadingStatus);
 
     const activeNomination = useSelector(state => state.nominations.activeNomination);
 

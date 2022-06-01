@@ -1,7 +1,7 @@
 import { getDatabase, ref, onValue, set } from 'firebase/database';
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-import { fightersFetched } from "../../pools/fightersSlice";
+import { fightersFetched } from "../fightersSlice";
 import { eliminationsFetched } from '../../elimination/elininationsSlice';
 import { poolsFetched } from '../../pools/poolsSlice';
 import AdminPanelEliminationRound from "./AdminPanelEliminationRound";

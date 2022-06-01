@@ -3,7 +3,7 @@ import { getDatabase, ref, onValue, set } from 'firebase/database'
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
-import { fightersFetched } from "../../pools/fightersSlice";
+import { fightersFetched } from "../fightersSlice";
 
 //Компонент для удаления и просмотра бойцов
 
